@@ -1,0 +1,8 @@
+# kubectl taint nodes <your-node-name> key1=value1:NoSchedule
+
+tolerations:
+- key: "key1"
+  operator: "Equal"
+  value: "value1"
+  effect: "NoSchedule"
+

@@ -1,0 +1,5 @@
+kubectl get nodes --show-labels
+#add label to node
+kubectl label nodes <your-node-name> disktype=ssd
+#remove label from node
+kubectl label nodes <your-node-name> disktype-

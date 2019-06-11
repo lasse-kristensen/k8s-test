@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-taints
+spec:
+  selector:
+    matchLabels:
+      run: my-taints
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        run: my-taints
+    spec:
+      containers:
+      - name: my-taints
+        image: nginx
+        ports:
+        - containerPort: 80
+      tolerations:
+      - key: "key1"
+        operator: "Equal"
+        value: "value1"
+        effect: "NoSchedule"
+
